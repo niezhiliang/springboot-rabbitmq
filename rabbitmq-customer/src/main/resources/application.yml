@@ -1,0 +1,31 @@
+spring:
+  datasource:
+    name: sdk_emergency
+    url: jdbc:127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: adminadmin
+    # 使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+  rabbitmq:
+  #基本配置
+    addresses: www.niezhiliang.com:5672
+    username: springcloud
+    password: 123456
+    virtual-host: /
+    connection-timeout: 15000
+  #消费端配置
+    listener:
+      simple:
+        #消费端
+        concurrency: 5
+        #最大消费端数
+        max-concurrency: 10
+        #自动签收auto  手动 manual
+        acknowledge-mode: manual
+        #限流（海量数据，同时只能过来一条）
+        prefetch: 1
+
+
+server:
+  port: 8000
