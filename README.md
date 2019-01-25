@@ -63,3 +63,5 @@ RabbitMq百分百推送流程图
 - 4.浏览器调用投递信息的控制器 `127.0.0.1:8081/send`
 
 - 5.在消费服务端的控制台可以看到信息处理的日志
+
+项目源码地址: https://github.com/niezhiliang/springboot-rabbitmq
