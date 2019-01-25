@@ -2,8 +2,6 @@
 
 ##### 代码实例及学习参考内容来自慕课网课程[RabbitMQ消息中间件极速入门与实战](https://www.imooc.com/learn/1042)部分代码自己进行了改造
 
-##### 特点和核心概念复制于 https://github.com/suxiongwei/springboot-rabbitmq
-
 ## 特点：
 1. RabbitMQ底层使用Erlang语言编写，传递效率高，延迟低
 2. 开源、性能优秀、稳定性较高
