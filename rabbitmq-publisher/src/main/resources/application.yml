@@ -25,8 +25,11 @@ spring:
     addresses: www.niezhiliang.com:5672
     username: springcloud
     password: 123456
+    #虚拟主机地址
     virtual-host: /
+    #连接超时时间
     connection-timeout: 15000
+
     publisher-confirms: true
     publisher-returns: true
     template:

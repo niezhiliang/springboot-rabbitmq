@@ -33,7 +33,10 @@ public class OrderReceiver {
         System.out.println("d订单id："+order.getId());
         Long deliveryTag = (Long) headers.get(AmqpHeaders.DELIVERY_TAG);
 
-        //ACK
+        /**
+         *  取值为 false 时，表示通知 RabbitMQ 当前消息被确认
+         *  如果为 true，则额外将比第一个参数指定的 delivery tag 小的消息一并确认
+         */
         channel.basicAck(deliveryTag,false);
     }
 

@@ -31,7 +31,15 @@ public class OrderSender {
     private BrokerMessageLogMapper brokerMessageLogMapper;
 
 
+
     final RabbitTemplate.ConfirmCallback confirmCallback = new RabbitTemplate.ConfirmCallback() {
+
+        /**
+         *
+         * @param correlationData 唯一标识，有了这个唯一标识，我们就知道可以确认（失败）哪一条消息了
+         * @param ack  是否投递成功
+         * @param cause 失败原因
+         */
         @Override
         public void confirm(CorrelationData correlationData, boolean ack, String cause) {
             String messageId = correlationData.getId();
@@ -65,6 +73,11 @@ public class OrderSender {
     };
 
 
+    /**
+     * 信息投递的方法
+     * @param order
+     * @throws Exception
+     */
     public void send(Order order) throws Exception{
         //设置投递回调
         rabbitTemplate.setConfirmCallback(confirmCallback);
