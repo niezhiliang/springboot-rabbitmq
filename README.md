@@ -1,6 +1,6 @@
-# springboot-rabbitmq
+# rabbitmq 消息100%可靠性投递的解决方案实现 ack手动确认方式
 
-##### 代码实例及学习参考内容来自慕课网课程[RabbitMQ消息中间件极速入门与实战](https://www.imooc.com/learn/1042)
+##### 代码实例及学习参考内容来自慕课网课程[RabbitMQ消息中间件极速入门与实战](https://www.imooc.com/learn/1042)部分代码自己进行了改造
 
 ##### 特点和核心概念复制于 https://github.com/suxiongwei/springboot-rabbitmq
 
