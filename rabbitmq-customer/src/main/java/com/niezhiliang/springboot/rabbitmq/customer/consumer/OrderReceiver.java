@@ -20,7 +20,7 @@ public class OrderReceiver {
 
 
     @RabbitListener(
-            bindings = @QueueBinding(
+            bindings = @QueueBinding(                    //数据是否持久化
                     value = @Queue(value = "order-queue",durable = "true"),
                     exchange = @Exchange(name = "order-exchange",
                     durable = "true",type = "topic"),
@@ -38,6 +38,7 @@ public class OrderReceiver {
          *  如果为 true，则额外将比第一个参数指定的 delivery tag 小的消息一并确认
          */
         channel.basicAck(deliveryTag,false);
+        System.out.println("--------消费完成--------");
     }
 
 }
